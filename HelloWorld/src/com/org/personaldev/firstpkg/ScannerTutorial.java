@@ -31,7 +31,7 @@ public class ScannerTutorial {
 		}
 	}
 	*/
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int i = scan.nextInt();
         double d = scan.nextDouble();
@@ -44,6 +44,24 @@ public class ScannerTutorial {
         System.out.println("String: " + s);
         System.out.println("Double: " + d);
         System.out.println("Int: " + i);
-    }
-
+    }*/
+	public static void main(String[] args){
+		Scanner userInput = new Scanner(System.in);
+		int row = userInput.nextInt();
+		int col = userInput.nextInt();
+		
+		int twoDim[][] = new int[row][col];
+		
+		for(int i = 0 ; i < row ; i++){
+			for(int j = 0 ; j < col ; j++){
+				twoDim[i][j] = userInput.nextInt();
+			}
+		}
+		
+		System.out.println(twoDim.length);
+		System.out.println((twoDim[twoDim.length-1]).length);
+		System.out.println(twoDim[twoDim.length-1][(twoDim[twoDim.length-1].length)-2]);
+		
+		userInput.close();
+	}
 }

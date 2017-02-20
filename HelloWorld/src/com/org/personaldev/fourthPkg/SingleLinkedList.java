@@ -84,7 +84,28 @@ public class SingleLinkedList {
 			System.out.println(" " + current.getData());
 		}
 	}
-
+	private void removeEven() {
+		// TODO Auto-generated method stub
+		Node prevNode = head;
+		Node currNode = head;
+		if(isEmpty()){
+			System.out.println("List is Empty No Node to remove");
+		}
+		while(currNode != null){
+			if((currNode.getData() % 2) == 0 ){
+				if(currNode == head){
+					head = currNode.getNext();
+				}
+				prevNode.setNext(currNode.getNext());
+				currNode = null;
+				currNode = prevNode.getNext();
+			}else{
+				prevNode = currNode;
+				currNode = currNode.getNext();
+			}
+		}
+		System.out.println(head.getData());
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner userInput = new Scanner(System.in);
@@ -95,7 +116,8 @@ public class SingleLinkedList {
 			System.out.println("1.> Insert Node in Linked list at head ");
 			System.out.println("2.> Remove Node from linked list from tail");
 			System.out.println("3.> Traverse Linked list from Head");
-			System.out.println("4.> Exit from the process");
+			System.out.println("4.> Remove even node from Linked List");
+			System.out.println("5.> Exit from the process");
 
 			choice = userInput.nextInt();
 			switch (choice) {
@@ -117,6 +139,12 @@ public class SingleLinkedList {
 				System.out.println("-----------------------------");
 				break;
 			case 4:
+				System.out.println("Remove Even Nodes from Link");
+				list.removeEven();
+				list.traverse();
+				System.out.println("-----------------------------");
+				break;
+			case 5:
 				System.out.println("Exit from Process");
 				System.out.println("-----------------------------");
 				userInput.close();

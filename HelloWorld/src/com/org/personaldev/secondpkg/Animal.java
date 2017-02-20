@@ -326,6 +326,10 @@ public class Animal {
 		
 		String threeDimensionalArray[][][] = {{{"000","001"},{"100","101"},{"200","201"},{"300","301"}},
 											  {{"010","011"},{"110","111"},{"210","211"},{"310","311"}}};
+
+		String threeDimensionalArrayOneMore[][][] = {{{"000"},{"100"},{"200"},{"300"}},
+				  {{"010"},{"110"},{"210"},{"310"}}};
+		
 		// This is a multidimensional array
 		//1. ArrayName
 		//2. How Many Go Down (or Say How Many Rows)
