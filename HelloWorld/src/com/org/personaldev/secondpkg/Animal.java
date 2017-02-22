@@ -3,6 +3,12 @@ package com.org.personaldev.secondpkg;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * @author chaudharimehul
+ * 
+ * This program is from youtube tutorial. Code is copied from youtube link and modified for performing certain experiments
+ * https://www.youtube.com/watch?v=WPvGqX-TXP0
+ */
 public class Animal {
 
 	private static final double FAVNUMBER = 1.6180;

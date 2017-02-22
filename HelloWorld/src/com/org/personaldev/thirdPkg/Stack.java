@@ -2,14 +2,50 @@ package com.org.personaldev.thirdPkg;
 
 import java.util.Scanner;
 
+/**
+ * @author chaudharimehul
+ *
+ */
 public class Stack {
 
-	static Scanner userIntput = new Scanner(System.in);
-	static int top = -1;
-	static int stack[];
-	static int stackSize;
+	Scanner userIntput = new Scanner(System.in);
+	int top = -1;
+	int stack[];
+	int stackSize;
 
-	public static boolean isFull(){
+	public Scanner getUserIntput() {
+		return userIntput;
+	}
+
+	public void setUserIntput(Scanner userIntput) {
+		this.userIntput = userIntput;
+	}
+
+	public int getTop() {
+		return top;
+	}
+
+	public void setTop(int top) {
+		this.top = top;
+	}
+
+	public int[] getStack() {
+		return stack;
+	}
+
+	public void setStack(int[] stack) {
+		this.stack = stack;
+	}
+
+	public int getStackSize() {
+		return stackSize;
+	}
+
+	public void setStackSize(int stackSize) {
+		this.stackSize = stackSize;
+	}
+	
+	public boolean isFull(){
 		if(top == (stackSize-1)){
 			return true;
 		}else{
@@ -17,7 +53,7 @@ public class Stack {
 		}
 	}
 
-	public static void push(int pushElement){
+	public void pushElement(int pushElement){
 		if(isFull()){
 			System.out.println("Stack is full cannot input more elements");
 		}else{
@@ -25,7 +61,7 @@ public class Stack {
 		}
 	}
 
-	public static boolean isEmpty(){
+	public boolean isEmpty(){
 		if(top == -1){
 			return true;
 		}else{
@@ -33,7 +69,7 @@ public class Stack {
 		}
 	}
 
-	public static void pop(){
+	public void popElement(){
 		if(isEmpty()){
 			System.out.println("No More element is stack");
 		}else{
@@ -41,7 +77,7 @@ public class Stack {
 		}
 	}
 
-	public static void peek(){
+	public void peekElement(){
 		if(isEmpty()){
 			System.out.println("No More element is stack");
 		}else{
@@ -49,24 +85,24 @@ public class Stack {
 		}
 	}
 
-	public static void traverse(){
+	public void traverseStack(){
 		if(isEmpty()){
 			System.out.println("No More element is stack");
 		}else{
 
 			for (int i = top; i >= 0; i--) {
-				System.out.print("|"+stack[i]);
+				System.out.print(stack[i]+"<--");
 			}
-			System.out.println("|");
+			System.out.println("");
 		}
 
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		Stack stackObj = new Stack();
 		System.out.println("Enter the Size of the Stack");
-		stackSize = userIntput.nextInt();
-		stack = new int[stackSize];
+		stackObj.setStackSize(stackObj.getUserIntput().nextInt());
+		stackObj.setStack(new int[stackObj.getStackSize()]);
 
 		while(true){
 			System.out.println("Enter Choice to For operation");
@@ -76,25 +112,27 @@ public class Stack {
 			System.out.println("4. Traverse");
 			System.out.println("5. Exit");
 
-			int choice = userIntput.nextInt();
+			int choice = stackObj.getUserIntput().nextInt();
 
 
 			switch (choice) {
 			case 1:
 				System.out.println("Enter the value to Push");
-				push(userIntput.nextInt());
+				stackObj.pushElement(stackObj.getUserIntput().nextInt());
+				stackObj.traverseStack();
 				break;
 			case 2:
 				System.out.println("Poped Value");
-				pop();
+				stackObj.popElement();
+				stackObj.traverseStack();
 				break;
 			case 3:
 				System.out.println("Peeked Value");
-				peek();
+				stackObj.peekElement();
 				break;
 			case 4:
 				System.out.println("Stack Traverse");
-				traverse();
+				stackObj.traverseStack();
 				break;
 			case 5:
 				System.out.println("Exiting From Stack");

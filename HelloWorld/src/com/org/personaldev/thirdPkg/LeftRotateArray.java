@@ -1,11 +1,15 @@
 package com.org.personaldev.thirdPkg;
 
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
+import java.util.Scanner;
 
+
+/**
+ * @author chaudharimehul
+ * 
+ * This program is to solve one of the 30-day challenge from hacker rank
+ * https://www.hackerrank.com/challenges/linkedin-practice-array-left-rotation
+ *
+ */
 public class LeftRotateArray {
 
 	public static void main(String[] args) {

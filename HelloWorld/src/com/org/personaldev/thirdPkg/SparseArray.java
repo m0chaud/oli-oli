@@ -1,11 +1,13 @@
 package com.org.personaldev.thirdPkg;
 
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
+import java.util.Scanner;
 
+
+/**
+ * @author chaudharimehul
+ * This Program is one of the challange from Data Structure from Hacker Rank
+ * https://www.hackerrank.com/challenges/sparse-arrays
+ */
 public class SparseArray {
 
 	public static void main(String[] args) {

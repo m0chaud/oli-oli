@@ -7,6 +7,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+
+/**
+ * @author chaudharimehul
+ *
+ * This program is to solve one of the 10-day statistics challenge from hacker rank
+ * https://www.hackerrank.com/challenges/s10-basic-statistics
+ */
 public class MeanMedianMode {
 
 	public static void main(String[] args) {
