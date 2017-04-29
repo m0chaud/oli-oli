@@ -11,11 +11,6 @@ package com.org.personaldev.firstpkg;
  * 
  * https://en.wikibooks.org/wiki/Java_Programming/Primitive_Types
  * 
- * Work on Array
- * 
- * 
- * Work on Collection
- * ArrayList, List, LinkedList, Queue, Stack, 
  * 
  */
 public class PrimitiveDataType {
@@ -51,6 +46,7 @@ public class PrimitiveDataType {
 		System.out.println("---------------------short Data Type---------------------");
 		short shortDataType = 32000; //16 bits - 1 Byte
 		System.out.println(shortDataType);
+		shortDataType = byteDataType;
 		
 		/*
 		 * int data type
