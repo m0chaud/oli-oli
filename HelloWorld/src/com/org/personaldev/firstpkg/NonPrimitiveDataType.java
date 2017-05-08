@@ -96,6 +96,9 @@ public class NonPrimitiveDataType {
 		for(int i = 0 ; i < todaysDay.length() ; i++ ){
 			System.out.print((char) (todaysDay.charAt(i) >= 97?todaysDay.charAt(i)-32:todaysDay.charAt(i)) );
 		}
+		
+		//int[][] array = new int[2][3];
+		int[][] array = { {1,2,3}, {4,5,6} };
 		//StringBuilder
 		//StringBuffer
 	}
