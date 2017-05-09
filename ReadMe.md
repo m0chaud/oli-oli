@@ -18,6 +18,7 @@ Progress so far in sequence
 4.2 Non-primitive
 
 
+AWS project links
 http://compit.us:8080/
 http://compit.us:8080/rest-cxf-second/userInformationJson
 http://compit.us:8080/rest-cxf-second/userInformationXml
