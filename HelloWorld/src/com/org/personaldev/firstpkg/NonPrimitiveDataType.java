@@ -27,6 +27,7 @@ public class NonPrimitiveDataType {
 		System.out.println("---------------------Short Data Type---------------------");
 		Short shortDataType = Short.valueOf(byteDataType);
 		System.out.println("Short Data Type " + shortDataType);
+		System.out.println("Short Minimum value " + Short.MIN_VALUE +" --- Integer Max Value "+ Short.MAX_VALUE); 
 
 		System.out.println("---------------------Integer Data Type---------------------");
 		Integer integerDataType = Integer.valueOf(shortDataType);
@@ -97,8 +98,51 @@ public class NonPrimitiveDataType {
 			System.out.print((char) (todaysDay.charAt(i) >= 97?todaysDay.charAt(i)-32:todaysDay.charAt(i)) );
 		}
 		
+		System.out.println("\n---------------------String Builder---------------------");
+		StringBuilder strBuilder = new StringBuilder();
+		strBuilder.append("First line in String builder in . -");
+		strBuilder.append('C');
+		System.out.println("string builder length " + strBuilder.length());
+		System.out.println("string builder  character at 3 "+strBuilder.charAt(3));
+		System.out.println("string builder Indexof method " + strBuilder.indexOf("in"));
+		System.out.println("string builder print out: -- " +  strBuilder);
+		System.out.println("string builder to String: -- " +  strBuilder.toString());
+		
+		
+		System.out.println("\n---------------------String Buffer---------------------");
+		
+		//StringBuffer is synchronized. (StringBuilder is not)
+		
+		Integer nCount =  8000000;
+		StringBuffer strBuffer = new StringBuffer();
+		
+		long time = System.currentTimeMillis();
+		System.out.println("Before appending on String Buffer ");
+		for(int i = 0 ; i <  nCount ; i++ ){
+			strBuffer.append(""+i);
+		}
+		System.out.println("After appending on String Buffer "+ (System.currentTimeMillis() - time) );
+		
+		//StringBuilder is comparatively faster than StringBuffer
+		StringBuilder strBuilder2 = new StringBuilder();
+		time = System.currentTimeMillis();
+		System.out.println("Before appending on String Builder ");
+		for(int i = 0 ; i < nCount; i++ ){
+			strBuilder2.append(""+i);
+		}
+		System.out.println("After appending on String Builder " + (System.currentTimeMillis() - time) );
+		
+		
+		System.out.println("\n---------------------Multi dimensional array---------------------");		
 		//int[][] array = new int[2][3];
 		int[][] array = { {1,2,3}, {4,5,6} };
+		for(int i = 0; i < array.length; i++){
+			for(int k = 0; k < array[i].length ;k ++){
+				System.out.print("--" + array[i][k] + "--");
+			}
+			System.out.println("");
+		}
+		
 		//StringBuilder
 		//StringBuffer
 	}
