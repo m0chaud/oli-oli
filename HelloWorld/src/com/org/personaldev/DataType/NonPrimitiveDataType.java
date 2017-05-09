@@ -1,4 +1,4 @@
-package com.org.personaldev.firstpkg;
+package com.org.personaldev.DataType;
 
 /**
  * @author: chaudharimehul

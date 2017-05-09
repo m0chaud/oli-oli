@@ -1,4 +1,4 @@
-package com.org.personaldev.secondpkg;
+package com.org.personaldev.AddPractice;
 
 import java.util.Arrays;
 import java.util.Scanner;

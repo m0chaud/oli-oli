@@ -1,4 +1,4 @@
-package com.org.personaldev.fourthPkg;
+package com.org.personaldev.DataStructure;
 
 import java.util.Scanner;
 

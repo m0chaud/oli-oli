@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.org.personaldev.firstpkg;
+package com.org.personaldev.AddPractice;
 
 import java.util.ArrayList;
 import java.util.HashMap;
