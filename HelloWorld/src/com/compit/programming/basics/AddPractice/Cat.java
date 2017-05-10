@@ -1,4 +1,4 @@
-package com.org.personaldev.AddPractice;
+package com.compit.programming.basics.AddPractice;
 
 public class Cat extends Animal {
 

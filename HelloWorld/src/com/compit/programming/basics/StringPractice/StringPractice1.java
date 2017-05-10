@@ -1,11 +1,11 @@
-package com.org.personaldev.library.v1.datastructure;
+package com.compit.programming.basics.StringPractice;
 
 /**
  * @author: chaudharimehul
- * @date:	May 10, 2017
+ * @date:	May 9, 2017
  * 
  */
-public class DynamicArray {
+public class StringPractice1 {
 
 	/**
 	 * @param args

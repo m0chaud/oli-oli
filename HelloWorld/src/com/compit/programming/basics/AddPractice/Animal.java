@@ -1,4 +1,4 @@
-package com.org.personaldev.AddPractice;
+package com.compit.programming.basics.AddPractice;
 
 import java.util.Arrays;
 import java.util.Scanner;

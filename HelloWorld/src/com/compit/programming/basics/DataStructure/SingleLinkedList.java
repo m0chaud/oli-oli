@@ -1,25 +1,17 @@
-package com.org.personaldev.DataStructure;
+package com.compit.programming.basics.DataStructure;
 
 import java.util.Scanner;
 
-/**
- * @author chaudharimehul
- *
- */
-class DualNode{
+class Node{
 	int data;
-	DualNode next;
-	DualNode previous;
-	
-	public DualNode(){
+
+	public Node(){
 		
 	}
-	
-	public DualNode(int data, DualNode next, DualNode previous) {
+	public Node(int data, Node next) {
 		super();
 		this.data = data;
 		this.next = next;
-		this.previous = previous;
 	}
 	
 	public int getData() {
@@ -28,23 +20,17 @@ class DualNode{
 	public void setData(int data) {
 		this.data = data;
 	}
-	public DualNode getNext() {
+	public Node getNext() {
 		return next;
 	}
-	public void setNext(DualNode next) {
+	public void setNext(Node next) {
 		this.next = next;
 	}
-	public DualNode getPrevious() {
-		return previous;
-	}
-	public void setPrevious(DualNode previous) {
-		this.previous = previous;
-	}
-
+	Node next;
 }
-public class DoubleLinkedList {
+public class SingleLinkedList {
 
-	DualNode head = null;
+	Node head = null;
 	
 	public boolean isEmpty(){
 		if(head == null) return true;
@@ -53,17 +39,19 @@ public class DoubleLinkedList {
 	}
 	
 	public void insertAtTail(int data){
-		DualNode node = new DualNode(data, null, null);
+		Node node = new Node();
+		
+		node.setData(data);
+		node.setNext(null);
 		
 		if(isEmpty()){
 			head = node;
 		}else {
-			DualNode current = head;
+			Node current = head;
 			while(current.getNext() != null){
 				current = current.getNext();
 			}
-			current.setNext(node);
-			node.setPrevious(current);
+			current.setNext(node); 
 		}
 	}
 	public void removeFromTail(){
@@ -74,8 +62,8 @@ public class DoubleLinkedList {
 		}
 		else {
 			
-			DualNode current = head;
-			DualNode previous = head;
+			Node current = head;
+			Node previous = head;
 			while(current.next != null){
 				previous = current;
 				current = current.getNext();
@@ -88,7 +76,7 @@ public class DoubleLinkedList {
 		if(isEmpty()){
 			System.out.println("List is Empty");
 		}else {
-			DualNode current = head;
+			Node current = head;
 			while(current.getNext() != null){
 				System.out.print(" " + current.getData() + " --> ");
 				current = current.getNext();
@@ -96,37 +84,39 @@ public class DoubleLinkedList {
 			System.out.println(" " + current.getData());
 		}
 	}
-
-	public void traverseFrontAndBack(){
+	private void removeEven() {
+		// TODO Auto-generated method stub
+		Node prevNode = head;
+		Node currNode = head;
 		if(isEmpty()){
-			System.out.println("List is Empty");
-		}else {
-			DualNode current = head;
-			while(current.getNext() != null){
-				System.out.print(" " + current.getData() + " --> ");
-				current = current.getNext();
-			}
-			System.out.println(" " + current.getData());
-			
-			while(current.getPrevious() != null){
-				System.out.print(" " + current.getData() + " --> ");
-				current = current.getPrevious();
-			}
-			System.out.println(" " + current.getData());
+			System.out.println("List is Empty No Node to remove");
 		}
+		while(currNode != null){
+			if((currNode.getData() % 2) == 0 ){
+				if(currNode == head){
+					head = currNode.getNext();
+				}
+				prevNode.setNext(currNode.getNext());
+				currNode = null;
+				currNode = prevNode.getNext();
+			}else{
+				prevNode = currNode;
+				currNode = currNode.getNext();
+			}
+		}
+		System.out.println(head.getData());
 	}
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner userInput = new Scanner(System.in);
-		DoubleLinkedList list = new DoubleLinkedList();
+		SingleLinkedList list = new SingleLinkedList();
 		int choice;
 		while(true){
 			System.out.println("Enter choice as below");
 			System.out.println("1.> Insert Node in Linked list at head ");
 			System.out.println("2.> Remove Node from linked list from tail");
 			System.out.println("3.> Traverse Linked list from Head");
-			System.out.println("4.> TraverseFrontAndBack Linked list from Head");
+			System.out.println("4.> Remove even node from Linked List");
 			System.out.println("5.> Exit from the process");
 
 			choice = userInput.nextInt();
@@ -149,8 +139,9 @@ public class DoubleLinkedList {
 				System.out.println("-----------------------------");
 				break;
 			case 4:
-				System.out.println("Traverse Linked list FrontAndBack");
-				list.traverseFrontAndBack();
+				System.out.println("Remove Even Nodes from Link");
+				list.removeEven();
+				list.traverse();
 				System.out.println("-----------------------------");
 				break;
 			case 5:
@@ -158,7 +149,7 @@ public class DoubleLinkedList {
 				System.out.println("-----------------------------");
 				userInput.close();
 				System.exit(0);
-
+				break;
 			default:
 				System.out.println("Invalid Option");
 				System.out.println("-----------------------------");

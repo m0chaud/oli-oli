@@ -1,11 +1,11 @@
-package com.org.personaldev.library.v1.datastructure;
+package com.compit.programming.basics.library.v1.datastructure;
 
 /**
  * @author: chaudharimehul
  * @date:	May 10, 2017
  * 
  */
-public class HashMe {
+public class DynamicArray {
 
 	/**
 	 * @param args

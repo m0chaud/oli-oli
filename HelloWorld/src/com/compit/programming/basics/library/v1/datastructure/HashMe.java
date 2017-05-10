@@ -1,11 +1,11 @@
-package com.org.personaldev.StringPractice;
+package com.compit.programming.basics.library.v1.datastructure;
 
 /**
  * @author: chaudharimehul
- * @date:	May 9, 2017
+ * @date:	May 10, 2017
  * 
  */
-public class StringPractice1 {
+public class HashMe {
 
 	/**
 	 * @param args
