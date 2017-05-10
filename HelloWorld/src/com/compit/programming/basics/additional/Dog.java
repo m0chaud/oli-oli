@@ -1,4 +1,4 @@
-package com.compit.programming.basics.AddPractice;
+package com.compit.programming.basics.additional;
 
 public class Dog extends Animal{
 

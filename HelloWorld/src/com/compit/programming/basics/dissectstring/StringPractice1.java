@@ -1,4 +1,4 @@
-package com.compit.programming.basics.StringPractice;
+package com.compit.programming.basics.dissectstring;
 
 /**
  * @author: chaudharimehul

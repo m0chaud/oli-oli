@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.compit.programming.basics.AddPractice;
+package com.compit.programming.basics.additional;
 
 import java.util.ArrayList;
 import java.util.HashMap;
