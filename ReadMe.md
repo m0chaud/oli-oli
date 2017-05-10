@@ -1,4 +1,4 @@
-Developer: Mehul Chaudhari
+Author: Mehul Chaudhari
 
 Sr. Software Engineer
 
@@ -19,17 +19,25 @@ Progress so far in sequence
 4.2 Non-primitive
 
 4.3 ArrayList
+
 4.5 HashMap
+
 4.6 HashSet
+
 4.7 List
 
     
 Place holder classes created to
+
 Practice various algorithms on String
+
 Create Inhouse version of Hash function and Dynamic Array
 
 
 AWS project links
+
 http://compit.us:8080/
+
 http://compit.us:8080/rest-cxf-second/userInformationJson
+
 http://compit.us:8080/rest-cxf-second/userInformationXml
