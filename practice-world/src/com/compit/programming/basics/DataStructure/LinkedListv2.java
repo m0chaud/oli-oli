@@ -6,6 +6,10 @@ import java.util.Scanner;
  * @author: chaudharimehul
  * @date:	May 13, 2017
  * 
+ * LinkedListv2
+ * Traverse the Linked list, through recursion
+ * remove odd values from linked list
+ * remove even values from linked list
  */
 public class LinkedListv2 {
 	
@@ -28,40 +32,58 @@ public class LinkedListv2 {
 	public void removeEvenValueNode(){
 		if(isEmpty())
 			return;
-		Node currentNode = headNode;
-		Node prevNode = headNode;
+		Node currentNode = getHeadNode();
+		Node prevNode = (getHeadNode().getData() % 2 != 0)?getHeadNode():null;
 		
-		//This will take care of head node
-		if(currentNode.getNext() == null){
-			if( (currentNode.getData() % 2 ) == 0){
-				setHeadNode(null);
-				return;
-			}
-		}
+		// 1 -->
+		// 2 -->
+		// 2 --> 2 -->
+		// 1 --> 2 --> 3 -->
+		// 1 --> 2 --> 2 -->
+		// 1 --> 1 --> 2 --> 1 -->
 		
-		while(currentNode.getNext() != null){
-			if((currentNode.getData() % 2) == 0 )
+		while(currentNode != null){
+			if( (currentNode.getData() % 2) == 0 )
 			{
-				prevNode.setNext(currentNode.getNext());
+				if( currentNode == getHeadNode() ){
+					setHeadNode(currentNode.getNext());
+				}
+				if(null != prevNode)
+					prevNode.setNext(currentNode.getNext());
 			}else{
 				prevNode = currentNode;
 			}
 			currentNode = currentNode.getNext();
-		}
-		
-		if((currentNode.getData() % 2) == 0 ){
-			prevNode.setNext(currentNode.getNext());
 		}
 	}
 	
 	public void removeOddValueNode(){
 		if(isEmpty())
 			return;
+		
+		Node currentNode = getHeadNode();
+		Node prevNode = (getHeadNode().getData() % 2 == 0)?getHeadNode():null;
+		
+		while(currentNode != null){
+			if(currentNode.getData() % 2 != 0){
+				if(currentNode == getHeadNode())
+					setHeadNode(currentNode.getNext());
+				
+				if(null != prevNode)
+					prevNode.setNext(currentNode.getNext());
+			}
+			else
+			{
+				prevNode = currentNode;
+			}
+			currentNode = currentNode.getNext();
+		}
 	}
 
 	//use of recursion to traverse the linked list
 	public void traverse(Node node){
 		if(node == null){
+			System.out.println("");
 			return;
 		}
 		System.out.print(node.getData() + " --> ");
@@ -103,6 +125,7 @@ public class LinkedListv2 {
 		System.out.println("5. Exit");
 		
 		while(!bExitFlag){
+			System.out.println("Enter Choice");
 			choice = in.nextInt();
 			switch(choice){
 			case 1:
