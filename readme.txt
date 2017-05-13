@@ -26,6 +26,11 @@ Progress so far in sequence
 
 4.7 List
 
+5. LinkedList
+
+5.1 LinkedListv1 (basic Linked List implementation)
+
+5.2 LinkedListv2 (Recursive, deleting node with specific criteria)
     
 Place holder classes created to
 
