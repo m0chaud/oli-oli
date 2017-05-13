@@ -59,6 +59,10 @@ public class LinkedListv1 {
 			//Empty list do nothing
 			return;
 		}
+		if(getHeadNode().getNext() == null){
+			headNode = null;
+			return;
+		}
 		Node currentNode = getHeadNode();
 		Node prevNode = getHeadNode();
 		
@@ -71,10 +75,14 @@ public class LinkedListv1 {
 		// prevNode = head
 		//head --> null
 		//currentNode=prevNode=head
-		//Free up memory and remove node from the list
-		//System.out.println(currentNode.getData());
 		prevNode.setNext(null);
 		currentNode = null; // need to revisit setting object to null is not working need to set explicit setNext(null)
+		//Java is pass by value. currentNode points to address where data and next node is set.
+		//currentNode --> data = x, next = null (AA)
+		//when I set currentNode = null (BB)
+		//We are not modifing data and next at existing location
+		//Instead we are pointing to new location at null
+		//
 	}
 
 	public void removeFromHead(){
@@ -135,6 +143,7 @@ public class LinkedListv1 {
 					if(data == -99) break;
 					linkedList.add(data);	
 				}
+				linkedList.traverse();
 				break;
 			case 2:
 				linkedList.traverse();
