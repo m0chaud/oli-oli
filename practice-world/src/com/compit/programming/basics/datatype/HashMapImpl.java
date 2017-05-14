@@ -1,4 +1,4 @@
-package com.compit.programming.basics.DataType;
+package com.compit.programming.basics.datatype;
 
 import java.util.HashMap;
 import java.util.Map;

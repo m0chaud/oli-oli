@@ -1,4 +1,4 @@
-package com.compit.programming.basics.DataStructure;
+package com.compit.programming.basics.datastructure;
 
 import java.util.Scanner;
 

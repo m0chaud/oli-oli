@@ -1,4 +1,4 @@
-package com.compit.programming.basics.HackerRank;
+package com.compit.programming.basics.hackerrank;
 
 import java.util.ArrayList;
 import java.util.Collections;
