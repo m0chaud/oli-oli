@@ -7,8 +7,8 @@ import java.util.Scanner;
  * @date:	May 14, 2017
  * 
  */
-public class Stackv1 {
-
+public class Queuev1{
+	
 	Node topNode = null;
 	
 	public void setTopNode(Node topNode){
@@ -19,66 +19,56 @@ public class Stackv1 {
 		return topNode;
 	}
 	
-	public void push(int data){
-		
+	public void add(int data){
 		Node node = new Node(data);
-		
-/*		if(isEmpty())
-		{
+		if(isEmpty()){
 			setTopNode(node);
 			return;
 		}
-*/		
-		node.setNext(peek());
-		setTopNode(node);
+		Node currentNode = getTopNode();
+		while(currentNode.getNext() != null){
+			currentNode = currentNode.getNext();
+		}
+		currentNode.setNext(node);
 	}
 	
-	//returning Node itself instead of data, to get more control over
-	//data getting returned to service method
-	public Node pop(){
-		
-		if(isEmpty())
-			return null;
-		
+	public Node remove(){
 		Node node = getTopNode();
-		setTopNode(node.getNext());
+		if(null != node)
+			setTopNode(node.getNext());
 		return node;
+	}
+	
+	public void traverse(){
+		if(isEmpty()){
+			System.out.println(" Queue is empty. ");
+		}
+		Node currentNode = getTopNode();
+		while(currentNode != null){
+			System.out.print(currentNode.getData() + " --> ");
+			currentNode = currentNode.getNext();
+		}
 	}
 	
 	public Node peek(){
 		return getTopNode();
 	}
 	
-	public void traverse(){
-		if(isEmpty())
-		{
-			System.out.println("stack is empty");
-			return;
-		}
-		Node currentNode = getTopNode();
-		while(currentNode != null){
-			System.out.print(currentNode.getData() + " --> " );
-			currentNode = currentNode.getNext();
-		}
-	}
 	public boolean isEmpty(){
-		if(null == topNode)
+		if(null == getTopNode() )
 			return true;
 		return false;
 	}
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	
+	public static void main(String[] args){
+		
 		Scanner in = new Scanner(System.in);
-		Stackv1 stack = new Stackv1();
+		Queuev1 queue = new Queuev1();
 		System.out.println("Enter Choice as below");
-		System.out.println("1. Push to the stack. Enter -99 to stop from push operation.");
-		System.out.println("2. Pop from the stack.");
-		System.out.println("3. Peek from the stack.");
-		System.out.println("4. Traverse the stack.");
+		System.out.println("1. Add to the queue. Enter -99 to stop from add operation.");
+		System.out.println("2. Remove from the queue.");
+		System.out.println("3. Peek from the queue.");
+		System.out.println("4. Traverse the queue.");
 		System.out.println("5. Exit.");
 		
 		int choice;
@@ -90,33 +80,33 @@ public class Stackv1 {
 			case 1:
 				data = in.nextInt();
 				while(data != -99){
-					stack.push(data);
+					queue.add(data);
 					data = in.nextInt();
 				}
 				System.out.println("");
-				stack.traverse();
+				queue.traverse();
 				break;
 			case 2:
-				Node popNode = stack.pop();
-				if(null != popNode)
-					System.out.println("Pop element value -- " + popNode.getData());
+				Node removeNode = queue.remove();
+				if(null != removeNode)
+					System.out.println("Remove element value -- " + removeNode.getData());
 				else
-					System.out.println(" Stack is empty. ");
+					System.out.println(" Queue is empty. ");
 				System.out.println("");
-				stack.traverse();
+				queue.traverse();
 				break;
 			case 3:
-				Node peekNode = stack.peek();
+				Node peekNode = queue.peek();
 				if(null != peekNode)
 					System.out.println("Peek element value -- "+ peekNode.getData());
 				else
-					System.out.println(" Stack is empty. ");
+					System.out.println(" Queue is empty. ");
 				System.out.println("");
-				stack.traverse();
+				queue.traverse();
 				break;
 			case 4:
-				System.out.println("");
-				stack.traverse();
+				System.out.println("");				
+				queue.traverse();
 				break;
 			case 5:
 				bExitFlag = true;
@@ -127,5 +117,4 @@ public class Stackv1 {
 		}
 		in.close();
 	}
-
 }
