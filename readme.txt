@@ -31,6 +31,18 @@ Progress so far in sequence
 5.1 LinkedListv1 (basic Linked List implementation)
 
 5.2 LinkedListv2 (Recursive, deleting node with specific criteria)
+
+6. Stack
+
+5.1 Stack v1
+
+5.2 Stack v2 (Generics)
+
+7. Queue
+
+7.1 Queue v1
+
+7.2 Queue v2 (Generics)
     
 Place holder classes created to
 
