@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * @author: chaudharimehul
  * @date:	May 14, 2017
- * 
+ * Node object used to implement stack
  */
 public class Stackv1 {
 
