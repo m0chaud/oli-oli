@@ -4,76 +4,62 @@ import java.util.Scanner;
 
 /**
  * @author: chaudharimehul
- * @date:	May 28, 2017
- * Stack v2 with generics
+ * @date:	May 29, 2017
+ * Queue v2 with generics
  * For generic String dataType is used for this implementation
  */
-public class Stackv2<T> {
+public class Queuev2<A> {
 
-	GenericNode<T> topNode;
+	GenericNode<A> topNode;
 	
-	public Stackv2(){
-		
+	public void setTopNode(GenericNode<A> topNode){
+		this.topNode = topNode;
 	}
 	
+	public GenericNode<A> getTopNode(){
+		return this.topNode;
+	}
+
 	public boolean isEmpty(){
-		if(null == topNode)
-			return true;
-		return false;
+		return ( (getTopNode()!=null)?false:true );
 	}
-	public void push(T data){
-		GenericNode<T> node = new GenericNode<T>(data);
-		
+	
+	public void add(A data){
+		GenericNode<A> node = new GenericNode<A>(data);
+		GenericNode<A> currentNode = getTopNode();
 		if(isEmpty())
 		{
-			topNode = node;
-		}else{
-			node.setNext(topNode);
 			setTopNode(node);
+		}
+		else{
+			while(null != currentNode.getNext()){
+				currentNode  = currentNode.getNext();
+			}
+			currentNode.setNext(node);
 		}
 	}
 	
-	public GenericNode<T> pop(){
-		GenericNode<T> node = null;
+	public GenericNode<A> remove(){
+		GenericNode<A> node = getTopNode();
 		if(isEmpty()){
-			System.out.println("Stack is empty");
-		}
-		else{
-			node = getTopNode();
+			System.out.println("Queue is empty");
+		}else{
 			setTopNode(getTopNode().getNext());
 		}
 		return node;
 	}
 	
-	public GenericNode<T> peek(){
-		GenericNode<T> node = null;
-
-		if(isEmpty()){
-			System.out.println("Stack is empty");
-		}
-		else{
-			node = getTopNode();
-		}
-		
+	public GenericNode<A> peek(){
+		GenericNode<A> node = getTopNode();
 		return node;
 	}
 	
 	public void traverse(){
-		GenericNode<T> currentNode = topNode;
-		
-		while(null != currentNode){
-			System.out.print(currentNode.getData() + " --> " );
+		GenericNode<A> currentNode = getTopNode();
+		while(currentNode != null){
+			System.out.print(currentNode.getData() +" --> ");
 			currentNode = currentNode.getNext();
 		}
-		System.out.println("");
-	}
-	
-	public GenericNode<T> getTopNode(){
-		return topNode;
-	}
-	
-	public void setTopNode(GenericNode<T> topNode){
-		this.topNode = topNode;
 	}
 	/**
 	 * @param args
@@ -82,7 +68,7 @@ public class Stackv2<T> {
 		// TODO Auto-generated method stub
 		Scanner in = new Scanner(System.in);
 		
-		Stackv2<String> stackv2 = new Stackv2<String>();
+		Queuev2<String> queuev2 = new Queuev2<String>();
 		GenericNode<String> node = new GenericNode<String>();
 		
 		System.out.println("Select below option to perform operation on Stack");
@@ -104,25 +90,25 @@ public class Stackv2<T> {
 					data = in.next();
 					while(!"done".equalsIgnoreCase(data)){
 						System.out.println("Data push to stack " + data);
-						stackv2.push(data);
+						queuev2.add(data);
 						data = in.next();
 					}
-					stackv2.traverse();
+					queuev2.traverse();
 				break;
 			case 2:
-				node = stackv2.pop();
+				node = queuev2.remove();
 				if(null != node)
 					System.out.println("Node removed from the stack " + node.getData() );
-				stackv2.traverse();
+				queuev2.traverse();
 				break;
 			case 3:
-				node = stackv2.peek();
+				node = queuev2.peek();
 				if(null != node)
 					System.out.println("Top node from the stack " + node.getData() );
-				stackv2.traverse();
+				queuev2.traverse();
 				break;
 			case 4:
-				stackv2.traverse();
+				queuev2.traverse();
 				break;
 			case 5:
 				bExit = true;
@@ -135,5 +121,4 @@ public class Stackv2<T> {
 		}
 		in.close();
 	}
-
 }
