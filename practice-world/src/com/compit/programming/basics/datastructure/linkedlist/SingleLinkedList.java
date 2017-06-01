@@ -1,7 +1,6 @@
-package com.compit.programming.basics.datastructure;
+package com.compit.programming.basics.datastructure.linkedlist;
 
 import java.util.Scanner;
-
 
 public class SingleLinkedList {
 

@@ -1,6 +1,8 @@
-package com.compit.programming.basics.datastructure;
+package com.compit.programming.basics.datastructure.linkedlist;
 
 import java.util.Scanner;
+
+import com.compit.programming.basics.datastructure.questack.Node;
 
 /**
  * @author: chaudharimehul

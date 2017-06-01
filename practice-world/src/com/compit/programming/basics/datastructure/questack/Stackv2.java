@@ -1,4 +1,4 @@
-package com.compit.programming.basics.datastructure;
+package com.compit.programming.basics.datastructure.questack;
 
 import java.util.Scanner;
 
