@@ -43,10 +43,10 @@ Progress so far in sequence
 7.1 Queue v1
 
 7.2 Queue v2 (Generics)
-    
-Place holder classes created to
 
-Practice various algorithms on String
+8. Some level of practice on String. Implementation of some of the String library functions
+
+Place holder classes created to
 
 Create Inhouse version of Hash function and Dynamic Array
 
