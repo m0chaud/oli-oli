@@ -54,6 +54,8 @@ Progress so far in sequence
 
 10.1 N-Array Tree Version 1 (Reminder used for inserting into the tree)
 
+10.2 Binary Tree v1 (Basic insert operation and In-Order traversal)
+
 Place holder classes created to
 
 Create Inhouse version of Hash function and Dynamic Array
