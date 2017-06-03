@@ -33,29 +33,34 @@ public class Stackv2<T> {
 		}
 	}
 	
-	public GenericNode<T> pop(){
-		GenericNode<T> node = null;
+	public T pop(){
+		
+		T data = null;
+		
 		if(isEmpty()){
 			System.out.println("Stack is empty");
 		}
 		else{
-			node = getTopNode();
+			data = getTopNode().getData();
 			setTopNode(getTopNode().getNext());
 		}
-		return node;
+		
+		return data;
 	}
 	
-	public GenericNode<T> peek(){
-		GenericNode<T> node = null;
+	public T peek(){
+		
+		T data = null;
 
 		if(isEmpty()){
 			System.out.println("Stack is empty");
 		}
 		else{
-			node = getTopNode();
+			
+			data = getTopNode().getData();
 		}
 		
-		return node;
+		return data;
 	}
 	
 	public void traverse(){
@@ -83,7 +88,7 @@ public class Stackv2<T> {
 		Scanner in = new Scanner(System.in);
 		
 		Stackv2<String> stackv2 = new Stackv2<String>();
-		GenericNode<String> node = new GenericNode<String>();
+		String nodeData = new String();
 		
 		System.out.println("Select below option to perform operation on Stack");
 		System.out.println("1. Add node into stack. Enter 'done' to stop entering the value");
@@ -110,15 +115,15 @@ public class Stackv2<T> {
 					stackv2.traverse();
 				break;
 			case 2:
-				node = stackv2.pop();
-				if(null != node)
-					System.out.println("Node removed from the stack " + node.getData() );
+				nodeData = stackv2.pop();
+				if(null != nodeData)
+					System.out.println("Node removed from the stack " + nodeData );
 				stackv2.traverse();
 				break;
 			case 3:
-				node = stackv2.peek();
-				if(null != node)
-					System.out.println("Top node from the stack " + node.getData() );
+				nodeData = stackv2.peek();
+				if(null != nodeData)
+					System.out.println("Top node from the stack " + nodeData );
 				stackv2.traverse();
 				break;
 			case 4:

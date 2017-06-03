@@ -39,19 +39,25 @@ public class Queuev2<A> {
 		}
 	}
 	
-	public GenericNode<A> remove(){
-		GenericNode<A> node = getTopNode();
+	public A remove(){
+		A data = null;
 		if(isEmpty()){
 			System.out.println("Queue is empty");
 		}else{
+			data = getTopNode().getData();
 			setTopNode(getTopNode().getNext());
 		}
-		return node;
+		return data;
 	}
 	
-	public GenericNode<A> peek(){
-		GenericNode<A> node = getTopNode();
-		return node;
+	public A peek(){
+		A data = null;
+		if(isEmpty()){
+			System.out.println("Queue is Empty");
+		}else{
+			data = getTopNode().getData();
+		}
+		return data;
 	}
 	
 	public void traverse(){
@@ -69,7 +75,7 @@ public class Queuev2<A> {
 		Scanner in = new Scanner(System.in);
 		
 		Queuev2<String> queuev2 = new Queuev2<String>();
-		GenericNode<String> node = new GenericNode<String>();
+		String nodeData = new String();
 		
 		System.out.println("Select below option to perform operation on Stack");
 		System.out.println("1. Add node into stack. Enter 'done' to stop entering the value");
@@ -96,15 +102,15 @@ public class Queuev2<A> {
 					queuev2.traverse();
 				break;
 			case 2:
-				node = queuev2.remove();
-				if(null != node)
-					System.out.println("Node removed from the stack " + node.getData() );
+				nodeData = queuev2.remove();
+				if(null != nodeData)
+					System.out.println("Node removed from the stack " + nodeData );
 				queuev2.traverse();
 				break;
 			case 3:
-				node = queuev2.peek();
-				if(null != node)
-					System.out.println("Top node from the stack " + node.getData() );
+				nodeData = queuev2.peek();
+				if(null != nodeData)
+					System.out.println("Top node from the stack " + nodeData );
 				queuev2.traverse();
 				break;
 			case 4:
