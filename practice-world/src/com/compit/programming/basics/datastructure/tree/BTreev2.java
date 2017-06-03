@@ -2,7 +2,7 @@ package com.compit.programming.basics.datastructure.tree;
 
 import java.util.Random;
 
-import com.compit.programming.basics.datastructure.questack.Stackv2;
+//import com.compit.programming.basics.datastructure.questack.Stackv2;
 import com.compit.programming.basics.datastructure.questack.Queuev2;
 /**
  * @author: chaudharimehul
@@ -154,9 +154,12 @@ public class BTreev2 {
 			tree.insert( random.nextInt(50) , tree.getRootNode() );
 		}
 
-		System.out.println("InOrder Traverse with recursion");
+		System.out.println("InOrder traverse with recursion");
 		tree.inOrderTraverse(tree.getRootNode());
-		System.out.println(" PreOrder Traverse without recursion ");
+		System.out.println(" PreOrder traverse without recursion ");
 		tree.preOrderTraverse(tree.getRootNode());
+		System.out.println(" PostOrder traverse with recursion ");
+		tree.postOrderTraverse(tree.getRootNode());
+
 	}
 }
