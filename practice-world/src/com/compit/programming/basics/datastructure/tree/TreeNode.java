@@ -20,11 +20,18 @@ public class TreeNode {
 		this.data = data;
 		this.childNodes = null;
 	}
-	
+		
 	public TreeNode(int data, List<TreeNode> childNodes){
 		this.data = data;
 		this.childNodes = childNodes;
-	}
+		
+/*		List<TreeNode> childNodes = (childNodeData.size() > 0)?new ArrayList<TreeNode>():null;
+		
+		for(Integer childData: childNodeData){
+			childNodes.add(new TreeNode(childData));
+		}
+		this.childNodes = childNodes;
+*/	}
 	
 	public int getData(){
 		return this.data;
