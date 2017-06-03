@@ -46,6 +46,14 @@ Progress so far in sequence
 
 8. Some level of practice on String. Implementation of some of the String library functions
 
+9. Sorting
+
+9.1 Bubble Sort (1000,000 Random Number) 
+
+10. Tree
+
+10.1 N-Array Tree Version 1 (Reminder used for inserting into the tree)
+
 Place holder classes created to
 
 Create Inhouse version of Hash function and Dynamic Array
