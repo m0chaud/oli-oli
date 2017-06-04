@@ -13,29 +13,29 @@ public class BTreeNode {
 	public BTreeNode(){
 		
 	}
-	
 	public void setData(int data){
 		this.data = data;
 	}
-	
 	public int getData(){
 		return this.data;
 	}
-	
 	public BTreeNode getLeft(){
 		return this.left;
 	}
-	
 	public BTreeNode getRight(){
 		return this.right;
 	}
-	
 	public void setRight(int data){
 		this.right = new BTreeNode(data);
 	}
-	
 	public void setLeft(int data){
 		this.left = new BTreeNode(data);
+	}
+	public void setRight(BTreeNode right){
+		this.right = right;
+	}
+	public void setLeft(BTreeNode left){
+		this.left = left;
 	}
 	
 	public BTreeNode(int data){
