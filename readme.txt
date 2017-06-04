@@ -48,13 +48,21 @@ Progress so far in sequence
 
 9. Sorting
 
-9.1 Bubble Sort (1000,000 Random Number) 
+9.1 Bubble Sort (1000,000 Random integer)
+
+9.2 Insertion Sort (1000,000 Random integer)
 
 10. Tree
 
 10.1 N-Array Tree Version 1 (Reminder used for inserting into the tree)
 
 10.2 Binary Tree v1 (Basic insert operation and In-Order traversal)
+
+10.3 Binary Tree v2 (Recursive insert, Queuev2(7.2) used for tree traverse)
+
+10.4 Binary Tree v1 (Node removal from tree)
+
+11. Heap (Still in Progress)
 
 Place holder classes created to
 

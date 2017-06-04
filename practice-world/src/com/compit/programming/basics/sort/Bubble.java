@@ -28,7 +28,7 @@ public class Bubble {
 		
 		Random rand = new Random();
 		
-		String fileName = "sortedValues" + new SimpleDateFormat("yyyy-MM-dd").format(new Date()) +".txt";
+		String fileName = "bubbleSortedValues" + new SimpleDateFormat("yyyy-MM-dd").format(new Date()) +".txt";
 		BufferedWriter bfw = null;
 		FileWriter fwr = null;
 				
@@ -61,13 +61,14 @@ public class Bubble {
 				break;
 			}
 		}
-		System.out.println("Time Taken to sort array:" + (System.currentTimeMillis() - startTime) );
+		System.out.println("Time Taken to bubble sort array:" + (System.currentTimeMillis() - startTime) );
 		try{
 			fwr = new FileWriter(fileName);
 			bfw = new BufferedWriter(fwr);
 			for(int  i = 0 ; i < arrayToBeSorted.length ; i++){
 				bfw.write("[" + arrayToBeSorted[i] + "],");
 			}
+			bfw.write("\n");
 			bfw.close();
 			fwr.close();
 		}
