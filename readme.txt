@@ -48,9 +48,9 @@ Progress so far in sequence
 
 9. Sorting
 
-9.1 Bubble Sort (1000,000 Random integer)
+9.1 Bubble Sort (1000,000 Random integer - ~41 minutes)
 
-9.2 Insertion Sort (1000,000 Random integer)
+9.2 Insertion Sort (1000,000 Random integer - ~11 minutes )
 
 10. Tree
 
@@ -62,7 +62,9 @@ Progress so far in sequence
 
 10.4 Binary Tree v1 (Node removal from tree)
 
-11. Heap (Still in Progress)
+11. Heap
+
+11.1 Heap v1 (using array)
 
 Place holder classes created to
 
