@@ -178,6 +178,7 @@ public class Heapv1 {
 		// TODO Auto-generated method stub
 		Random random = new Random();
 		Heapv1 heap = new Heapv1();
+		String seperator = "----------------------";
 
 		System.out.println("Random generated data: ");
 		int inputData;
@@ -188,27 +189,31 @@ public class Heapv1 {
 			heap.add(inputData);
 		}
 
-		System.out.println("");
+		System.out.println(seperator);
 
-		System.out.println("Data after added to heap: ");
+		System.out.println("\nData after added to heap: ");
 		int[] data = heap.getData();
 
 		for(int i = 0 ; i <= heap.getMaxNodeIndex() ; i++){
-			System.out.println("["+data[i]+"],");
+			System.out.print("["+data[i]+"],");
 		}
 
-		System.out.println("Peek : " + heap.peek() );
+		System.out.println("\n"+seperator);
+		System.out.println("\nPeek : " + heap.peek() );
 
 		System.out.println("Poll: " + heap.poll() );
 
-		System.out.println("Data after removing root node: ");
+		System.out.println("\n"+seperator);
+		System.out.println("\nData after removing root node: ");
 		data = heap.getData();
 
 		for(int i = 0 ; i <= heap.getMaxNodeIndex() ; i++){
 			System.out.print("["+data[i]+"],");
 		}
 
+		System.out.println("\n"+seperator);
 		System.out.println("\nPoll: " + heap.poll() );
+		System.out.println(seperator);
 
 		System.out.println("Data after removing second root node: ");
 		data = heap.getData();
@@ -216,6 +221,7 @@ public class Heapv1 {
 		for(int i = 0 ; i <= heap.getMaxNodeIndex() ; i++){
 			System.out.print("["+data[i]+"],");
 		}
+		System.out.println("\n"+seperator);
 
 	}
 

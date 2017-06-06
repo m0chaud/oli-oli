@@ -52,6 +52,8 @@ Progress so far in sequence
 
 9.2 Insertion Sort (1000,000 Random integer - ~11 minutes )
 
+9.3 Merge Sort (1000,000 random integer - ~300 milliseconds)
+
 10. Tree
 
 10.1 N-Array Tree Version 1 (Reminder used for inserting into the tree)
