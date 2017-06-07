@@ -56,6 +56,8 @@ Progress so far in sequence
 
 9.4 Selection Sort (10 fix values)
 
+9.5 Quick Sort( Thank You "Tony Hoare" for giving such a wonder ful algorithm. 1000,000 random integer - ~126 milliseconds - super impressed with this algorithm, 100M sorting took - 0.2 minutes )
+
 10. Tree
 
 10.1 N-Array Tree Version 1 (Reminder used for inserting into the tree)
