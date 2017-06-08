@@ -2,10 +2,10 @@ package com.compit.programming.basics.library.v1.datastructure;
 
 /**
  * @author: chaudharimehul
- * @date:	May 10, 2017
+ * @date:	Jun 7, 2017
  * 
  */
-public class HashMe {
+public class HashTablev2 {
 
 	/**
 	 * @param args
