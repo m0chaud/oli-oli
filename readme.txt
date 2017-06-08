@@ -72,9 +72,9 @@ Progress so far in sequence
 
 11.1 Heap v1 (using array)
 
-Place holder classes created to
+12
 
-Create Inhouse version of Hash function and Dynamic Array
+12.1 Hashtable version 1
 
 
 AWS project links
