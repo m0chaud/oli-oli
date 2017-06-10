@@ -2,8 +2,6 @@ package com.compit.programming.basics.datastructure.linkedlist;
 
 import java.util.Scanner;
 
-import com.compit.programming.basics.datastructure.questack.Node;
-
 /**
  * @author: chaudharimehul
  * @date:	May 12, 2017
@@ -39,6 +37,10 @@ public class LinkedListv1 {
 
 	public Node getHeadNode(){
 		return headNode;
+	}
+
+	public void setHeadNode(Node headNode){
+		this.headNode = headNode;
 	}
 
 	public void add(int data){
