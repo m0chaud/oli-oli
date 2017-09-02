@@ -11,11 +11,17 @@ public interface LinkedList <T> {
 	
 	public void print();
 	
-	public T deleteAtHead();
+	public void deleteAtHead();
 	
-	public T deleteAtTail();
+	public void deleteAtTail();
 	
 	public void deleteAllNodes();
 	
 	public void initializeDefaultList();
+	
+	public boolean isEmpty();
+	
+	public void setHeadNode(GenericNode<T> headNode);
+	
+	public GenericNode<T> getHeadNode();
 }
