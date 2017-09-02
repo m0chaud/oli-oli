@@ -96,16 +96,37 @@ public class LinkedListv1 {
 		return dataNode.getData();
 	}
 
-	public int deleteFromStartAtIndex(int index){
+	public void deleteCompleteLinkedList(){
+		if(isEmpty()){
+			return;
+		}
+		Node currentNode = getHeadNode();
+		Node nullifyNode;
+		while(currentNode != null){
+			nullifyNode = currentNode;
+			currentNode = currentNode.getNextNode();
+			nullifyNode = null;
+		}
+		setHeadNode(null);
+	}
+	
+	public void initializeDefaultLinkedList(){
+		deleteCompleteLinkedList();
+		for(int i = 10 ; i > 0 ; i--){
+			insert(i);
+		}
+	}
+	
+	public int printFromStartIndex(int index){
 
 		if(isEmpty()){
 			System.out.println("Linked list is empty");
 			return -9999;
 		}
 		Node currentNode = getHeadNode();
-		int i = 1;
+		int i = 0;
 		while(currentNode != null){
-			if(i == index){
+			if(i >= index){
 				break;
 			}
 			currentNode = currentNode.getNextNode();
@@ -115,7 +136,7 @@ public class LinkedListv1 {
 		return (currentNode == null)?-9999:currentNode.getData();
 	}
 
-	public int deleteFromEndAtIndex(int index){
+	public int printFromEndIndex(int index){
 
 		if(isEmpty()){
 			System.out.println("Linked list is empty");
@@ -126,7 +147,7 @@ public class LinkedListv1 {
 		int i = 0;
 		while(currentNode != null){
 			i++;
-			if(i >= index){
+			if(i > index){
 				dataNode = dataNode.getNextNode();
 			}
 			currentNode = currentNode.getNextNode();
@@ -146,11 +167,16 @@ public class LinkedListv1 {
 		System.out.println("1. To insert data in to Linked List");
 		System.out.println("2. To delete data at head in to Linked List");
 		System.out.println("3. To delete data at tail in to Linked List");
-		System.out.println("4. To delete data from start index in to Linked List");
-		System.out.println("5. To delete data from end index in to Linked List");
+		System.out.println("4. To print data from start index in to Linked List");
+		System.out.println("5. To print data from end index in to Linked List");
 		System.out.println("6. To print Linked List");
-		System.out.println("7. Exit");
+		System.out.println("7. To Initialize default Linked List");
+		System.out.println("8. Exit");
 
+		System.out.println(" Default link list ");
+		list1.initializeDefaultLinkedList();
+		list1.print();
+		
 		int option;
 		boolean readOption = true;
 		int data;
@@ -189,9 +215,9 @@ public class LinkedListv1 {
 			case 4:
 				System.out.println("-> Enter index from start");
 				index = in.nextInt();
-				data = list1.deleteFromEndAtIndex(index);
+				data = list1.printFromStartIndex(index);
 				if(data != -9999){
-					System.out.println("Deleted node value from start index " + index + " - " + data);
+					System.out.println("Print node value from start index " + index + " - " + data);
 					list1.print();
 				}
 
@@ -200,9 +226,9 @@ public class LinkedListv1 {
 			case 5:
 				System.out.println("-> Enter index from end");
 				index = in.nextInt();
-				data = list1.deleteFromEndAtIndex(index);
+				data = list1.printFromEndIndex(index);
 				if(data != -9999){
-					System.out.println("Deleted node value from end index " + index + " - " + data);
+					System.out.println("Print node value from end index " + index + " - " + data);
 					list1.print();
 				}
 				System.out.println("->-<-");					
@@ -212,6 +238,10 @@ public class LinkedListv1 {
 				System.out.println("->-<-");
 				break;
 			case 7:
+				list1.initializeDefaultLinkedList();
+				list1.print();
+				break;
+			case 8:
 				readOption = false;
 				break;
 			default:
