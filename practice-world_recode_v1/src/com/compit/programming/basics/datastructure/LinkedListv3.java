@@ -8,32 +8,32 @@ package com.compit.programming.basics.datastructure;
 public class LinkedListv3 {
 
 	public void reversePrint(GenericNode<Integer> headNode){
-		
+
 		if(headNode == null)
 			return;
-			
+
 		reversePrint(headNode.getNextNode());
-		
 		System.out.print(" --> " + headNode.getData());
-		
+
 	}
 
 	public GenericNode<Integer> reverseLinkedList(GenericNode<Integer> headNode){
-		
+
 		if(headNode == null)
 			return null;
-		if(headNode != null && headNode.getNextNode() == null)
+
+		if(headNode != null && headNode.getNextNode() == null){
 			return headNode;
-			
-		GenericNode<Integer> prevNode = reverseLinkedList(headNode.getNextNode());
-		
-		prevNode.setNextNode(headNode);
+		}
+
+		GenericNode<Integer> nextNode = reverseLinkedList(headNode.getNextNode());
+
+		headNode.getNextNode().setNextNode(headNode);
 		headNode.setNextNode(null);
-		
-		return prevNode;
-		
+
+		return nextNode;
 	}
-		
+
 	public GenericNode<Integer> deleteEvenNode(GenericNode<Integer> headNode){
 		//GenericNode<Integer> headNode = new GenericNode<Integer>();
 
@@ -66,7 +66,7 @@ public class LinkedListv3 {
 		}
 		return headNode;
 	}
-	
+
 	public GenericNode<Integer> deleteOddNode(GenericNode<Integer> headNode){
 		//GenericNode<Integer> headNode = new GenericNode<Integer>();
 
@@ -99,7 +99,7 @@ public class LinkedListv3 {
 		}
 		return headNode;
 	}
-	
+
 	/**
 	 * @param args
 	 */
@@ -108,7 +108,7 @@ public class LinkedListv3 {
 		LinkedListv2<Integer> linkedListv2 = new LinkedListv2<Integer>();
 		LinkedListv3 linkedListv3 = new LinkedListv3();
 
-		
+
 		linkedListv2.initializeDefaultList();
 		System.out.println( "After initializing list" );
 		linkedListv2.print();
@@ -131,13 +131,14 @@ public class LinkedListv3 {
 		linkedListv2.setHeadNode( linkedListv3.deleteOddNode(linkedListv2.getHeadNode()) );
 		System.out.println("After deleting odd node");		
 		linkedListv2.print();
-	
+
 		System.out.println("Reverse Print the Singly Linked list");
 		linkedListv3.reversePrint( linkedListv2.getHeadNode() );
 		System.out.println();
 
 		System.out.println("Reverse the Singly Linked list");
 		linkedListv2.setHeadNode( linkedListv3.reverseLinkedList( linkedListv2.getHeadNode() ) );
+		linkedListv2.print();
 		System.out.println();
 
 	}
