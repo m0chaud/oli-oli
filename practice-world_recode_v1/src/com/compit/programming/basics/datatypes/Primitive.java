@@ -1,4 +1,4 @@
-package com.compit.programming.basics.datastructure.datatypes;
+package com.compit.programming.basics.datatypes;
 
 public class Primitive {
 
