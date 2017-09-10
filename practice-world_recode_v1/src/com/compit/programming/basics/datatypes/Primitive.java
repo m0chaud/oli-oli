@@ -75,8 +75,10 @@ public class Primitive {
 		System.out.printf("--> float with %%c print option - %c \n", (char)f);
 		System.out.printf("float %%f - %f \n", f);		
 		
-
-
+		double d = 98.578;
+		System.out.printf("--> double with %%d print option - %d \n", (int)d);
+		System.out.printf("--> double with %%c print option - %c \n", (char)d);
+		System.out.printf("--> double with %%f print option - %2.2f \n", d);
 	}
 
 }
