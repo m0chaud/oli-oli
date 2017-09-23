@@ -5,6 +5,13 @@ public class GenericNode<T> {
 	GenericNode<T> next;
 	GenericNode<T> prev;
 	
+	public GenericNode(){
+	}
+	
+	public GenericNode(T data){
+		this.data = data;
+	}
+	
 	public void setData(T data){
 		this.data = data;
 	}

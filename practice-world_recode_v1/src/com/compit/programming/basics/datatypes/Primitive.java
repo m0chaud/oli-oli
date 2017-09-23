@@ -1,6 +1,5 @@
 package com.compit.programming.basics.datatypes;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Primitive {

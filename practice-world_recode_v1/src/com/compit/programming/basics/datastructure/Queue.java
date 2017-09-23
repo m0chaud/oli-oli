@@ -2,17 +2,19 @@ package com.compit.programming.basics.datastructure;
 
 /**
  * @author: chaudharimehul
- * @date:	Sep 1, 2017
+ * @date:	Sep 23, 2017
  * 
  */
-public class Queue {
+public interface Queue<T> {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
+	public void add(T data);
+	
+	public T remove();
+	
+	public T peek();
+	
+	public void print();
+	
+	public boolean isEmpty();
 
 }
