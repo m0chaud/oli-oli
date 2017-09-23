@@ -18,6 +18,8 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.SortedMap;
+import java.util.Arrays;
+import java.util.Collections;
 
 class Basic{
 	String valueOf;
@@ -274,6 +276,32 @@ public class NonPrimitiveV2 {
 		linkedHashSet.forEach( ll1 -> System.out.println( "linkedHashSet value: " + ll1 ) );
 		
 		System.out.println("");
+		
+		int[] k = new int[10];
+		
+		for(int i = 0 ; i < 10 ; i ++ ){
+			k[i] = r.nextInt(200);
+		}
+		
+		Arrays.sort(k);
+		
+		System.out.println("Array sort using Arrays Sort ");
+		
+		Arrays.stream(k).forEach( kk1 -> System.out.println(" array value: " + kk1 ));
+		//k.forEach( kk1 -> System.out.println(" array value: " + kk1 ));
+		
+		System.out.println("");
+		
+		Set<Integer> linkedHashSet2 = new LinkedHashSet<Integer>();
+		
+		for(int i = 0 ; i < 10 ; i++){
+			linkedHashSet2.add(r.nextInt(200));
+		}
+		List<Integer> sortedHashSet = new ArrayList<Integer>(linkedHashSet2);
+		Collections.sort(sortedHashSet);
+		
+		System.out.println(" sorted hashSet values: " + sortedHashSet);
+		
 	}
 
 }
