@@ -60,6 +60,7 @@ public class QueueImpl<T> implements Queue<T> {
 	public void add(T data) {
 		// TODO Auto-generated method stub
 		GenericNode<T> node = new GenericNode<T>(data);
+		System.out.println(" Adding --> " + data);
 		if(!isEmpty()){
 			GenericNode<T> currentNode = getHeadNode();
 			while(currentNode.getNextNode() != null){
@@ -114,7 +115,12 @@ public class QueueImpl<T> implements Queue<T> {
 			GenericNode<T> currentNode = getHeadNode();
 
 			while(currentNode != null){
-				System.out.print(" --> " + currentNode.getData());
+				if(currentNode == getHeadNode()){
+					System.out.print(" --> " + currentNode.getData() + " (head) ");
+				}
+				else{
+					System.out.print(" --> " + currentNode.getData());
+				}
 				currentNode = currentNode.getNextNode();
 			}
 			System.out.println("");
